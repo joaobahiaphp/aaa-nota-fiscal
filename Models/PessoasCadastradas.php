@@ -31,6 +31,8 @@ class PessoasCadastradas{
 
     public function __destruct(){
 
+    }
+
 
     /**
      * Get the value of cpfCnpj
@@ -491,8 +493,5 @@ class PessoasCadastradas{
 
         return $this;
     }
-    }
-
-    
 
 ?>
