@@ -34,8 +34,6 @@
 			$obj->PessoasCadastradas[$contaLista]['pais'] = $_POST['pais'];
 			$obj->PessoasCadastradas[$contaLista]['uf'] = $_POST['uf'];
 			$obj->PessoasCadastradas[$contaLista]['municipio'] = $_POST['municipio'];
-
-			$obj->gravarDatabase();
 			
 			$obj->__destruct();
 			
@@ -75,10 +73,6 @@
 			$obj->PessoasCadastradas[$contaLista]['municipio'] = $_POST['municipio'];
 
 			var_dump($obj->PessoasCadastradas);
-
-			die('aqui');
-
-			$obj->gravarDatabase();
 			
 			$obj->__destruct();
 			

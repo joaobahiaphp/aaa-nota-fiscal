@@ -2,28 +2,29 @@
 
 class PessoasCadastradas{
 
-    private $cpfCnpj;
-    private $nomeRazaoSocial;
-    private $situacao;
-    private $tipo;
-    private $inscricaoEstadual;
-    private $ehCliente;
-    private $ehFornecedor;
-    private $emiteNota;
-    private $nomeFantasia;
-    private $cnaeFiscal;
-    private $inscricaoMunicipal;
-    private $inscricaoEstadualSubstituto;
-    private $regimeTributario;
-    private $telefone;
-    private $cep;
-    private $logradouro;
-    private $complemento;
-    private $numero;
-    private $bairro;
-    private $pais;
-    private $uf;
-    private $municipio;
+    public $id;
+    public $cpfCnpj;
+    public $nomeRazaoSocial;
+    public $situacao;
+    public $tipo;
+    public $inscricaoEstadual;
+    public $ehCliente;
+    public $ehFornecedor;
+    public $emiteNota;
+    public $nomeFantasia;
+    public $cnaeFiscal;
+    public $inscricaoMunicipal;
+    public $inscricaoEstadualSubstituto;
+    public $regimeTributario;
+    public $telefone;
+    public $cep;
+    public $logradouro;
+    public $complemento;
+    public $numero;
+    public $bairro;
+    public $pais;
+    public $uf;
+    public $municipio;
 
     public function __construct(){
 
@@ -111,6 +112,15 @@ class PessoasCadastradas{
     {
         $this->tipo = $tipo;
 
+        if($this->tipo == 'fisica'){
+            $this->nomeFantasia = "nao-tem";
+            $this->cnaeFiscal = "nao-tem";
+            $this->inscricaoMunicipal = "nao-tem";
+            $this->inscricaoEstadualSubstituto = "nao-tem";
+            $this->regimeTributario = "nao-tem";
+            $this->telefone = "nao-tem";
+        }
+
         return $this;
     }
 
@@ -131,7 +141,6 @@ class PessoasCadastradas{
     {
         $this->inscricaoEstadual = $inscricaoEstadual;
 
-        return $this;
     }
 
     /**
@@ -151,7 +160,6 @@ class PessoasCadastradas{
     {
         $this->ehCliente = $ehCliente;
 
-        return $this;
     }
 
     /**
@@ -171,7 +179,6 @@ class PessoasCadastradas{
     {
         $this->ehFornecedor = $ehFornecedor;
 
-        return $this;
     }
 
     /**
@@ -191,7 +198,6 @@ class PessoasCadastradas{
     {
         $this->emiteNota = $emiteNota;
 
-        return $this;
     }
 
     /**
@@ -211,7 +217,6 @@ class PessoasCadastradas{
     {
         $this->nomeFantasia = $nomeFantasia;
 
-        return $this;
     }
 
     /**
@@ -231,7 +236,6 @@ class PessoasCadastradas{
     {
         $this->cnaeFiscal = $cnaeFiscal;
 
-        return $this;
     }
 
     /**
@@ -251,7 +255,6 @@ class PessoasCadastradas{
     {
         $this->inscricaoMunicipal = $inscricaoMunicipal;
 
-        return $this;
     }
 
     /**
@@ -271,7 +274,6 @@ class PessoasCadastradas{
     {
         $this->inscricaoEstadualSubstituto = $inscricaoEstadualSubstituto;
 
-        return $this;
     }
 
     /**
@@ -291,27 +293,6 @@ class PessoasCadastradas{
     {
         $this->regimeTributario = $regimeTributario;
 
-        return $this;
-    }
-
-    /**
-     * Get the value of regimeTributario
-     */ 
-    public function getRegimeTributario()
-    {
-        return $this->regimeTributario;
-    }
-
-    /**
-     * Set the value of regimeTributario
-     *
-     * @return  self
-     */ 
-    public function setRegimeTributario($regimeTributario)
-    {
-        $this->regimeTributario = $regimeTributario;
-
-        return $this;
     }
 
     /**
@@ -331,7 +312,6 @@ class PessoasCadastradas{
     {
         $this->telefone = $telefone;
 
-        return $this;
     }
 
     /**
@@ -351,7 +331,6 @@ class PessoasCadastradas{
     {
         $this->cep = $cep;
 
-        return $this;
     }
 
     /**
@@ -371,7 +350,6 @@ class PessoasCadastradas{
     {
         $this->logradouro = $logradouro;
 
-        return $this;
     }
 
     /**
@@ -391,7 +369,6 @@ class PessoasCadastradas{
     {
         $this->complemento = $complemento;
 
-        return $this;
     }
 
     /**
@@ -411,7 +388,6 @@ class PessoasCadastradas{
     {
         $this->numero = $numero;
 
-        return $this;
     }
 
     /**
@@ -431,7 +407,6 @@ class PessoasCadastradas{
     {
         $this->bairro = $bairro;
 
-        return $this;
     }
 
     /**
@@ -451,7 +426,6 @@ class PessoasCadastradas{
     {
         $this->pais = $pais;
 
-        return $this;
     }
 
     /**
@@ -471,7 +445,6 @@ class PessoasCadastradas{
     {
         $this->uf = $uf;
 
-        return $this;
     }
 
     /**
@@ -491,7 +464,28 @@ class PessoasCadastradas{
     {
         $this->municipio = $municipio;
 
+    }
+
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
+
         return $this;
     }
+}
 
 ?>

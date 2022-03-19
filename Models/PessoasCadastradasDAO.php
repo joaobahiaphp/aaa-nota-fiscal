@@ -6,7 +6,7 @@ class PessoasCadastradasDAO{
 
 	var $retornar = array();
 	
-	var $nomeArquivo = __DIR__.'\PessoasCadastradas.json' ;
+	var $nomeArquivo = __DIR__.'/PessoasCadastradas.json' ;
 	
 	var $abrirArquivo;
 	
@@ -100,7 +100,8 @@ class PessoasCadastradasDAO{
 	}
 
 	public function __destruct(){
-		
+		//$this->mostrarArray();
+		$this->gravarDatabase();
 	}
 	
 	public function gravarDatabase(){
@@ -160,41 +161,39 @@ class PessoasCadastradasDAO{
 		return $this->retornar;
 	}
 
-	public function upPessoasCadastradas($id,$cpfCnpj,$nomeRazaoSocial,$situacao,$tipo,$inscricaoEstadual,$ehCliente,$ehFornecedor,$emiteNota,$nomeFantasia,$cnaeFiscal,$inscricaoMunicipal,$inscricaoEstadualSubstituto,$regimeTributario,$telefone,$cep,$logradouro,$complemento,$numero,$bairro,$pais,$uf,$municipal){
-		$cont = 0;
+	public function upPessoasCadastradas(PessoasCadastradas $obj){
 
-		foreach($this->PessoasCadastradas as $pessoa){
-			if($id == $cont && $cont == $pessoa['id'] ){
-				$pessoa['cpf-cnpj'] = $cpfCnpj;
-				$pessoa['nome-razao-social'] = $nomeRazaoSocial;
-				$pessoa['situacao'] = $situacao;
-				$pessoa['tipo'] = $tipo;
-				$pessoa['inscricao-estadual'] = $inscricaoEstadual;
-				$pessoa['eh-cliente'] = $ehCliente;
-				$pessoa['eh-fornecedor'] = $ehFornecedor;
-				$pessoa['emite-nota'] = $emiteNota;
-				$pessoa['nome-fantasia'] = $nomeFantasia;
-				$pessoa['cnae-fiscal'] = $cnaeFiscal;
-				$pessoa['inscricao-municipal'] = $inscricaoMunicipal;
-				$pessoa['inscricao-estadual-substituto'] = $inscricaoEstadualSubstituto;
-				$pessoa['regime-tributario'] = $regimeTributario;
-				$pessoa['telefone'] = $telefone;
-				$pessoa['cep'] = $cep;
-				$pessoa['logradouro'] = $logradouro;
-				$pessoa['complemento'] = $complemento;
-				$pessoa['numero'] = $numero;
-				$pessoa['bairro'] = $bairro;
-				$pessoa['pais'] = $pais;
-				$pessoa['uf'] = $uf;
-				$pessoa['municipio'] = $municipal;
-			}
-			
-			$cont = $cont + 1;
-		
-		}
+		$this->PessoasCadastradas[$obj->id]['cpf-cnpj'] = $obj->cpfCnpj;
+		$this->PessoasCadastradas[$obj->id]['nome-razao-social'] = $obj->nomeRazaoSocial;
+		$this->PessoasCadastradas[$obj->id]['situacao'] = $obj->situacao;
+		$this->PessoasCadastradas[$obj->id]['tipo'] = $obj->tipo;
+		$this->PessoasCadastradas[$obj->id]['inscricao-estadual'] = $obj->inscricaoEstadual;
+		$this->PessoasCadastradas[$obj->id]['eh-cliente'] = $obj->ehCliente;
+		$this->PessoasCadastradas[$obj->id]['eh-fornecedor'] = $obj->ehFornecedor;
+		$this->PessoasCadastradas[$obj->id]['emite-nota'] = $obj->emiteNota;
+		$this->PessoasCadastradas[$obj->id]['nome-fantasia'] = $obj->nomeFantasia;
+		$this->PessoasCadastradas[$obj->id]['cnae-fiscal'] = $obj->cnaeFiscal;
+		$this->PessoasCadastradas[$obj->id]['inscricao-municipal'] = $obj->inscricaoMunicipal;
+		$this->PessoasCadastradas[$obj->id]['inscricao-estadual-substituto'] = $obj->inscricaoEstadualSubstituto;
+		$this->PessoasCadastradas[$obj->id]['regime-tributario'] = $obj->regimeTributario;
+		$this->PessoasCadastradas[$obj->id]['telefone'] = $obj->telefone;
+		$this->PessoasCadastradas[$obj->id]['cep'] = $obj->cep;
+		$this->PessoasCadastradas[$obj->id]['logradouro'] = $obj->logradouro;
+		$this->PessoasCadastradas[$obj->id]['logradouro'] = $obj->logradouro;
+		$this->PessoasCadastradas[$obj->id]['logradouro'] = $obj->logradouro;
+		$this->PessoasCadastradas[$obj->id]['complemento'] = $obj->complemento;
+		$this->PessoasCadastradas[$obj->id]['numero'] = $obj->numero;
+		$this->PessoasCadastradas[$obj->id]['bairro'] = $obj->bairro;
+		$this->PessoasCadastradas[$obj->id]['pais'] = $obj->pais;
+		$this->PessoasCadastradas[$obj->id]['uf'] = $obj->uf;
+		$this->PessoasCadastradas[$obj->id]['municipio'] = $obj->municipio;
 
 		return true;
 		
+	}
+
+	public function mostrarArray(){
+		var_dump($this->PessoasCadastradas);
 	}
 }
 
