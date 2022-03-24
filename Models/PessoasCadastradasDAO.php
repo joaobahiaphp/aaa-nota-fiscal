@@ -6,7 +6,7 @@ class PessoasCadastradasDAO{
 
 	var $retornar = array();
 	
-	var $nomeArquivo = __DIR__.'/PessoasCadastradas.json' ;
+	var $nomeArquivo = __DIR__.'/DataBase/PessoasCadastradas.json' ;
 	
 	var $abrirArquivo;
 	
