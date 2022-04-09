@@ -6,7 +6,7 @@ class PessoasCadastradasDAO{
 
 	var $retornar = array();
 	
-	var $nomeArquivo = __DIR__.'\PessoasCadastradas.json' ;
+	var $nomeArquivo = __DIR__.'/PessoasCadastradas.json' ;
 	
 	var $abrirArquivo;
 	
@@ -18,89 +18,11 @@ class PessoasCadastradasDAO{
 		
 		$this->PessoasCadastradas = json_decode($this->json,true);
 		
-		/*
-		$this->PessoasCadastradas = [
-			0=>['id'=>0,
-				'cpf-cnpj'=>'840.409.250-02',
-				'nome-razao-social'=>'Maria Doroteia',
-				'situacao'=>'ativo',
-				'tipo'=>'fisica',
-				'inscricao-estadual'=>'07014362/001-22',
-				'eh-cliente'=>'sim',
-				'eh-fornecedor'=>'sim',
-				'emite-nota'=>'sim',
-				'nome-fantasia'=>'nao-tem',
-				'cnae-fiscal'=>'nao-tem',
-				'inscricao-municipal'=>'nao-tem',
-				'inscricao-estadual-substituto'=>'nao-tem',
-				'regime-tributario'=>'nao-tem',
-				'telefone'=>'nao-tem',
-				'cep'=>'nao-tem',
-				'logradouro'=>'nao-tem',
-				'complemento'=>'nao-tem',
-				'numero'=>'nao-tem',
-				'bairro'=>'nao-tem',
-				'pais'=>'brasil',
-				'uf'=>'df',
-				'municipio'=>'nao-tem'
-			],
-			
-			1=>['id'=>1,
-				'cpf-cnpj'=>'810.394.549-02',
-				'nome-razao-social'=>'Marcos Alves',
-				'situacao'=>'inativo',
-				'tipo'=>'fisica',
-				'inscricao-estadual'=>'90493824/001-90',
-				'eh-cliente'=>'sim',
-				'eh-fornecedor'=>'sim',
-				'emite-nota'=>'sim',
-				'nome-fantasia'=>'nao-tem',
-				'cnae-fiscal'=>'nao-tem',
-				'inscricao-municipal'=>'nao-tem',
-				'inscricao-estadual-substituto'=>'nao-tem',
-				'regime-tributario'=>'nao-tem',
-				'telefone'=>'nao-tem',
-				'cep'=>'nao-tem',
-				'logradouro'=>'nao-tem',
-				'complemento'=>'nao-tem',
-				'numero'=>'nao-tem',
-				'bairro'=>'nao-tem',
-				'pais'=>'brasil',
-				'uf'=>'df',
-				'municipio'=>'nao-tem'
-			],
-			
-			2=>['id'=>2,
-				'cpf-cnpj'=>'05.501.476/0001-20',
-				'nome-razao-social'=>'STAFF Consultoria e Serviços Ltda',
-				'situacao'=>'ativo',
-				'tipo'=>'juridica',
-				'inscricao-estadual'=>'07510142/001-54',
-				'eh-cliente'=>'sim',
-				'eh-fornecedor'=>'sim',
-				'emite-nota'=>'sim',
-				'nome-fantasia'=>'STAFF Business',
-				'cnae-fiscal'=>'85.99-6-04',
-				'inscricao-municipal'=>'07510142/001-54',
-				'inscricao-estadual-substituto'=>'07014362/001-22',
-				'regime-tributario'=>'simples nacional',
-				'telefone'=>'(61)99940-5573',
-				'cep'=>'70340-000',
-				'logradouro'=>'SRTVS 701',
-				'complemento'=>'Edificio assis',
-				'numero'=>'7',
-				'bairro'=>'asa sul',
-				'pais'=>'brasil',
-				'uf'=>'df',
-				'municipio'=>'brasília',				
-			],
-		];
-		*/
-		
 	}
 
 	public function __destruct(){
-		
+		//$this->mostrarArray();
+		$this->gravarDatabase();
 	}
 	
 	public function gravarDatabase(){
@@ -160,41 +82,39 @@ class PessoasCadastradasDAO{
 		return $this->retornar;
 	}
 
-	public function upPessoasCadastradas($id,$cpfCnpj,$nomeRazaoSocial,$situacao,$tipo,$inscricaoEstadual,$ehCliente,$ehFornecedor,$emiteNota,$nomeFantasia,$cnaeFiscal,$inscricaoMunicipal,$inscricaoEstadualSubstituto,$regimeTributario,$telefone,$cep,$logradouro,$complemento,$numero,$bairro,$pais,$uf,$municipal){
-		$cont = 0;
+	public function upPessoasCadastradas(PessoasCadastradas $obj){
 
-		foreach($this->PessoasCadastradas as $pessoa){
-			if($id == $cont && $cont == $pessoa['id'] ){
-				$pessoa['cpf-cnpj'] = $cpfCnpj;
-				$pessoa['nome-razao-social'] = $nomeRazaoSocial;
-				$pessoa['situacao'] = $situacao;
-				$pessoa['tipo'] = $tipo;
-				$pessoa['inscricao-estadual'] = $inscricaoEstadual;
-				$pessoa['eh-cliente'] = $ehCliente;
-				$pessoa['eh-fornecedor'] = $ehFornecedor;
-				$pessoa['emite-nota'] = $emiteNota;
-				$pessoa['nome-fantasia'] = $nomeFantasia;
-				$pessoa['cnae-fiscal'] = $cnaeFiscal;
-				$pessoa['inscricao-municipal'] = $inscricaoMunicipal;
-				$pessoa['inscricao-estadual-substituto'] = $inscricaoEstadualSubstituto;
-				$pessoa['regime-tributario'] = $regimeTributario;
-				$pessoa['telefone'] = $telefone;
-				$pessoa['cep'] = $cep;
-				$pessoa['logradouro'] = $logradouro;
-				$pessoa['complemento'] = $complemento;
-				$pessoa['numero'] = $numero;
-				$pessoa['bairro'] = $bairro;
-				$pessoa['pais'] = $pais;
-				$pessoa['uf'] = $uf;
-				$pessoa['municipio'] = $municipal;
-			}
-			
-			$cont = $cont + 1;
-		
-		}
+		$this->PessoasCadastradas[$obj->id]['cpf-cnpj'] = $obj->cpfCnpj;
+		$this->PessoasCadastradas[$obj->id]['nome-razao-social'] = $obj->nomeRazaoSocial;
+		$this->PessoasCadastradas[$obj->id]['situacao'] = $obj->situacao;
+		$this->PessoasCadastradas[$obj->id]['tipo'] = $obj->tipo;
+		$this->PessoasCadastradas[$obj->id]['inscricao-estadual'] = $obj->inscricaoEstadual;
+		$this->PessoasCadastradas[$obj->id]['eh-cliente'] = $obj->ehCliente;
+		$this->PessoasCadastradas[$obj->id]['eh-fornecedor'] = $obj->ehFornecedor;
+		$this->PessoasCadastradas[$obj->id]['emite-nota'] = $obj->emiteNota;
+		$this->PessoasCadastradas[$obj->id]['nome-fantasia'] = $obj->nomeFantasia;
+		$this->PessoasCadastradas[$obj->id]['cnae-fiscal'] = $obj->cnaeFiscal;
+		$this->PessoasCadastradas[$obj->id]['inscricao-municipal'] = $obj->inscricaoMunicipal;
+		$this->PessoasCadastradas[$obj->id]['inscricao-estadual-substituto'] = $obj->inscricaoEstadualSubstituto;
+		$this->PessoasCadastradas[$obj->id]['regime-tributario'] = $obj->regimeTributario;
+		$this->PessoasCadastradas[$obj->id]['telefone'] = $obj->telefone;
+		$this->PessoasCadastradas[$obj->id]['cep'] = $obj->cep;
+		$this->PessoasCadastradas[$obj->id]['logradouro'] = $obj->logradouro;
+		$this->PessoasCadastradas[$obj->id]['logradouro'] = $obj->logradouro;
+		$this->PessoasCadastradas[$obj->id]['logradouro'] = $obj->logradouro;
+		$this->PessoasCadastradas[$obj->id]['complemento'] = $obj->complemento;
+		$this->PessoasCadastradas[$obj->id]['numero'] = $obj->numero;
+		$this->PessoasCadastradas[$obj->id]['bairro'] = $obj->bairro;
+		$this->PessoasCadastradas[$obj->id]['pais'] = $obj->pais;
+		$this->PessoasCadastradas[$obj->id]['uf'] = $obj->uf;
+		$this->PessoasCadastradas[$obj->id]['municipio'] = $obj->municipio;
 
 		return true;
 		
+	}
+
+	public function mostrarArray(){
+		var_dump($this->PessoasCadastradas);
 	}
 }
 

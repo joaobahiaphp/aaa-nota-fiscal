@@ -44,7 +44,10 @@ body{
 	width:20px;
 }
 
-
+#login{
+	font-size:12px;
+	text-align:center;
+}
 
 fieldset{
 	margin-top: 10px;

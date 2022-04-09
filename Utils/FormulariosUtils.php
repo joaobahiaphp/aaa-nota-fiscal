@@ -483,6 +483,7 @@ class FormulariosUtils{
 						<fieldset>
 							<input type='hidden' name='tipo' value='fisica'>
 							<input type='hidden' name='id' value='{$matrix['id']}'>
+							<input type='hidden' name='situacao' value='{$matrix['situacao']}'>
 							<table>
 								<input type='submit' name='submit' value='Atualizar'>&nbsp;<input type='reset' name='reset' value='Limpar'>
 							</table>
