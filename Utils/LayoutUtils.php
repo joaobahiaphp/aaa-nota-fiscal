@@ -79,6 +79,7 @@ class LayoutUtils{
 									<a href=''>Backup</a>
 									<a href=''>Restaurar</>
 									<a href=''>Relatório Gerencial</a>
+									<a href='LoginLogoutController.php?function=logout'>Logout</a>
 								</div>
 							</div>
 							<br />

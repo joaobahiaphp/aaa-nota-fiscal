@@ -6,7 +6,7 @@ class PessoasCadastradasDAO{
 
 	var $retornar = array();
 	
-	var $nomeArquivo = __DIR__.'/DataBase/PessoasCadastradas.json' ;
+	var $nomeArquivo = __DIR__.'/PessoasCadastradas.json' ;
 	
 	var $abrirArquivo;
 	
@@ -17,85 +17,6 @@ class PessoasCadastradasDAO{
 		$this->json = file_get_contents($this->nomeArquivo);
 		
 		$this->PessoasCadastradas = json_decode($this->json,true);
-		
-		/*
-		$this->PessoasCadastradas = [
-			0=>['id'=>0,
-				'cpf-cnpj'=>'840.409.250-02',
-				'nome-razao-social'=>'Maria Doroteia',
-				'situacao'=>'ativo',
-				'tipo'=>'fisica',
-				'inscricao-estadual'=>'07014362/001-22',
-				'eh-cliente'=>'sim',
-				'eh-fornecedor'=>'sim',
-				'emite-nota'=>'sim',
-				'nome-fantasia'=>'nao-tem',
-				'cnae-fiscal'=>'nao-tem',
-				'inscricao-municipal'=>'nao-tem',
-				'inscricao-estadual-substituto'=>'nao-tem',
-				'regime-tributario'=>'nao-tem',
-				'telefone'=>'nao-tem',
-				'cep'=>'nao-tem',
-				'logradouro'=>'nao-tem',
-				'complemento'=>'nao-tem',
-				'numero'=>'nao-tem',
-				'bairro'=>'nao-tem',
-				'pais'=>'brasil',
-				'uf'=>'df',
-				'municipio'=>'nao-tem'
-			],
-			
-			1=>['id'=>1,
-				'cpf-cnpj'=>'810.394.549-02',
-				'nome-razao-social'=>'Marcos Alves',
-				'situacao'=>'inativo',
-				'tipo'=>'fisica',
-				'inscricao-estadual'=>'90493824/001-90',
-				'eh-cliente'=>'sim',
-				'eh-fornecedor'=>'sim',
-				'emite-nota'=>'sim',
-				'nome-fantasia'=>'nao-tem',
-				'cnae-fiscal'=>'nao-tem',
-				'inscricao-municipal'=>'nao-tem',
-				'inscricao-estadual-substituto'=>'nao-tem',
-				'regime-tributario'=>'nao-tem',
-				'telefone'=>'nao-tem',
-				'cep'=>'nao-tem',
-				'logradouro'=>'nao-tem',
-				'complemento'=>'nao-tem',
-				'numero'=>'nao-tem',
-				'bairro'=>'nao-tem',
-				'pais'=>'brasil',
-				'uf'=>'df',
-				'municipio'=>'nao-tem'
-			],
-			
-			2=>['id'=>2,
-				'cpf-cnpj'=>'05.501.476/0001-20',
-				'nome-razao-social'=>'STAFF Consultoria e Serviços Ltda',
-				'situacao'=>'ativo',
-				'tipo'=>'juridica',
-				'inscricao-estadual'=>'07510142/001-54',
-				'eh-cliente'=>'sim',
-				'eh-fornecedor'=>'sim',
-				'emite-nota'=>'sim',
-				'nome-fantasia'=>'STAFF Business',
-				'cnae-fiscal'=>'85.99-6-04',
-				'inscricao-municipal'=>'07510142/001-54',
-				'inscricao-estadual-substituto'=>'07014362/001-22',
-				'regime-tributario'=>'simples nacional',
-				'telefone'=>'(61)99940-5573',
-				'cep'=>'70340-000',
-				'logradouro'=>'SRTVS 701',
-				'complemento'=>'Edificio assis',
-				'numero'=>'7',
-				'bairro'=>'asa sul',
-				'pais'=>'brasil',
-				'uf'=>'df',
-				'municipio'=>'brasília',				
-			],
-		];
-		*/
 		
 	}
 
