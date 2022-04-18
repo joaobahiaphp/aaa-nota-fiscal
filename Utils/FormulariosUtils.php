@@ -22,13 +22,13 @@ class FormulariosUtils{
 						var n_curso = document.getElementById('selecionaTipo').value;
 						switch(n_curso){
 							case 'fisica':
-								location.href = 'index.php?v=CadastrarPessoa&tipo=fisica';
+								location.href = 'index.php?v=nfCadastrarPessoa&tipo=fisica';
 							break;
 							case 'juridica':
-								location.href = 'index.php?v=CadastrarPessoa&tipo=juridica';
+								location.href = 'index.php?v=nfCadastrarPessoa&tipo=juridica';
 							break;	
 							default:
-								location.href = 'index.php?v=CadastrarPessoa';
+								location.href = 'index.php?v=nfCadastrarPessoa';
 							break;
 						}
 					}
@@ -37,7 +37,7 @@ class FormulariosUtils{
 			
 				<div id='conteudo'>
 				<p class='titulo'>Cadastrar Pessoa</p>
-				<form action='InsertController.php' method='post'>
+				<form action='ServletInsert.php' method='post'>
 					
 					<fieldset>
 						<legend>Pessoa</legend>
@@ -73,13 +73,13 @@ class FormulariosUtils{
 								var n_curso = document.getElementById('selecionaTipo').value;
 								switch(n_curso){
 									case 'fisica':
-										location.href = 'index.php?v=CadastrarPessoa&tipo=fisica';
+										location.href = 'index.php?v=nfCadastrarPessoa&tipo=fisica';
 									break;
 									case 'juridica':
-										location.href = 'index.php?v=CadastrarPessoa&tipo=juridica';
+										location.href = 'index.php?v=nfCadastrarPessoa&tipo=juridica';
 									break;	
 									default:
-										location.href = 'index.php?v=CadastrarPessoa';
+										location.href = 'index.php?v=nfCadastrarPessoa';
 									break;
 								}
 							}
@@ -88,7 +88,7 @@ class FormulariosUtils{
 					
 						<div id='conteudo'>
 						<p class='titulo'>Cadastrar Pessoa - Pessoa Física</p>
-						<form action='InsertController.php' method='post'>
+						<form action='ServletInsert.php' method='post'>
 							
 							<fieldset>
 								<legend>Pessoa</legend>
@@ -190,13 +190,13 @@ class FormulariosUtils{
 								var n_curso = document.getElementById('selecionaTipo').value;
 								switch(n_curso){
 									case 'fisica':
-										location.href = 'index.php?v=CadastrarPessoa&tipo=fisica';
+										location.href = 'index.php?v=nfCadastrarPessoa&tipo=fisica';
 									break;
 									case 'juridica':
-										location.href = 'index.php?v=CadastrarPessoa&tipo=juridica';
+										location.href = 'index.php?v=nfCadastrarPessoa&tipo=juridica';
 									break;	
 									default:
-										location.href = 'index.php?v=CadastrarPessoa';
+										location.href = 'index.php?v=nfCadastrarPessoa';
 									break;
 								}
 							}
@@ -205,7 +205,7 @@ class FormulariosUtils{
 
 						<div id='conteudo'>
 						<p class='titulo'>Cadastrar Pessoa - Pessoa Jurídica</p>
-						<form action='InsertController.php' method='post'>
+						<form action='ServletInsert.php' method='post'>
 							
 							<fieldset>
 								<legend>Pessoa</legend>
@@ -332,7 +332,7 @@ class FormulariosUtils{
 				
 					<div id='conteudo'>
 					<p class='titulo'>Visualizar/Editar Pessoa</p>
-					<form action='UpdateController.php' method='post'>
+					<form action='ServletUpdate.php' method='post'>
 						
 						<fieldset>
 							<legend>Pessoa</legend>
@@ -500,7 +500,7 @@ class FormulariosUtils{
 				
 						<div id='conteudo'>
 						<p class='titulo'>Visualizar/Editar Pessoa</p>
-						<form action='UpdateController.php' method='post'>
+						<form action='ServletUpdate.php' method='post'>
 							
 							<fieldset>
 								<legend>Pessoa</legend>

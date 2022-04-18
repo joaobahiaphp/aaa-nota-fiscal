@@ -4,7 +4,7 @@
 
 	include("Utils/FormulariosUtils.php");
 
-	$layout = new LayoutUtils();
+	$layout = new LayoutUtils("nf");
 
 	$formulario = new FormulariosUtils();
 

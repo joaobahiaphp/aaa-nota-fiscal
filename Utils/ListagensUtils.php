@@ -57,7 +57,7 @@ class ListagensUtils{
 				<td class='alargar'>{$matrix['nome-razao-social']}</td>
 				<td class='alargar'>{$matrix['situacao']}</td>
 				<td>
-					<a class='acoes-abrir' href='index.php?v=VisualizarPessoa&id={$matrix['id']}'>visualizar</a>&nbsp;
+					<a class='acoes-abrir' href='index.php?v=nfVisualizarPessoa&id={$matrix['id']}'>visualizar</a>&nbsp;
 					<a class='acoes-editar' href=''>editar</a>
 				</td>
 			</tr>	

@@ -2,7 +2,7 @@
 
 	include("Utils/LayoutUtils.php");
 
-	$layout = new LayoutUtils();
+	$layout = new LayoutUtils("nf");
 
 	$layout->imprimeCabecalho();
 

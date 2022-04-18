@@ -4,22 +4,33 @@
 
 if ( isset($_GET['v']) && isset($_SESSION['token']) ){
 	switch($_GET['v']){
-		case 'DadosPessoa':
-			include('Views/Modules/NotaFiscal/viewDadosPessoa.php');
+
+		/* views = us Usuários-do-Sistema */
+
+
+		
+		/* views = dp Dept-Pessoal */
+
+
+
+		/* views = nf Nota-Fiscal */
+
+		case 'nfDadosPessoa':
+			include('Views/NotaFiscal/viewDadosPessoa.php');
 		break;
-		case 'CadastrarPessoa':
-			include('Views/Modules/NotaFiscal/viewCadastrarPessoa.php');
+		case 'nfCadastrarPessoa':
+			include('Views/NotaFiscal/viewCadastrarPessoa.php');
 		break;
-		case 'ListarPessoasCadastradas':
-			include('Views/Modules/NotaFiscal/viewListarPessoasCadastradas.php');
+		case 'nfListarPessoasCadastradas':
+			include('Views/NotaFiscal/viewListarPessoasCadastradas.php');
 		break;
-		case 'VisualizarPessoa':
-			include('Views/Modules/NotaFiscal/viewVisualizarPessoa.php');
+		case 'nfVisualizarPessoa':
+			include('Views/NotaFiscal/viewVisualizarPessoa.php');
 		break;
 	}
 }
 else{
-	include('Views/Modules/viewMenu.php');
+	include('Views/viewMenu.php');
 }
 
 ?>

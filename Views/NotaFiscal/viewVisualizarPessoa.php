@@ -6,7 +6,9 @@ include("Models/PessoasCadastradasDAO.php");
 
 include("Utils/LayoutUtils.php");
 
-$layout = new LayoutUtils();
+@session_start();
+
+$layout = new LayoutUtils("nf");
 
 $layout->imprimeCabecalho();
 
@@ -28,7 +30,7 @@ if(isset($_GET['id'])){
 else{
 	
 	echo"<script>alert('Id não encontrado!');</script>";
-	header('location:index.php?v=ListarPessoasCadastradas');
+	header('location:index.php?v=nfListarPessoasCadastradas');
 	
 }
 

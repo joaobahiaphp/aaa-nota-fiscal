@@ -6,7 +6,7 @@
 	
 	include("Models/PessoasCadastradasDAO.php");
 
-	$layout = new LayoutUtils();
+	$layout = new LayoutUtils("nf");
 
 	$listaEntidades = new ListagensUtils();
 
