@@ -81,10 +81,61 @@ class LayoutUtils{
 						<div id='tudo'>
 						
 							
-							<div id='cabecalho'>
-								<br />
-								<hr />
+						<div id='cabecalho'>
+						<div class='dropdown'>
+							<a onclick='history.back(-1);' class='dropbtn' >&lt;&lt;&nbsp;Voltar</a>
+						</div>
+						|
+						<div class='dropdown'>
+							<button class='dropbtn'>Empregador</button>
+							<div class='dropdown-content'>
+								<a href=''>Dados do Empregador</a>
 							</div>
+						</div>
+						|
+						<div class='dropdown'>
+							<button class='dropbtn'>Empregados</button>
+							<div class='dropdown-content'>
+								<a href=''>Gestão de Empregados</a>
+								<a href=''>Admitir</a>
+
+							</div>
+						</div>
+						|
+						<div class='dropdown'>
+							<button class='dropbtn'>Trabalhador sem vínculo</button>
+							<div class='dropdown-content'>
+								<a href=''>Gestão de Trabalhadores</a>
+								<a href=''>Cadastrar</a>
+								
+							</div>
+						</div>
+						|
+						<div class='dropdown'>
+							<button class='dropbtn'>Folha de pagamento</button>
+							<div class='dropdown-content'>
+								<a href=''>Gestão da Folha</a>
+								
+							</div>
+						</div>
+
+						<div class='dropdown'>
+							<button class='dropbtn'>Sistema</button>
+							<div class='dropdown-content'>
+								<a href=''>Quadro de Avisos</a>
+								<a href=''>Certificados</a>
+								<a href=''>Parametros</a>
+								<a href=''>Importar Arquivos</a>
+								<a href=''>Backup</a>
+								<a href=''>Restaurar</>
+								<a href=''>Relatório Gerencial</a>
+								<a href='index.php'>Escolher Módulo</a>
+								<a href='ServletLoginLogout.php?function=logout'>Logout</a>
+							</div>
+						</div>
+						<br />
+						<hr />
+					</div>
 				
 				";
 
@@ -163,6 +214,7 @@ class LayoutUtils{
 										<a href=''>Backup</a>
 										<a href=''>Restaurar</>
 										<a href=''>Relatório Gerencial</a>
+										<a href='index.php'>Escolher Módulo</a>
 										<a href='ServletLoginLogout.php?function=logout'>Logout</a>
 									</div>
 								</div>
